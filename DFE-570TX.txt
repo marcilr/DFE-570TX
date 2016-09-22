@@ -1,0 +1,64 @@
+DFE-570TX.txt
+Created Tue Feb  9 08:02:46 AKST 2010
+by Raymond E. Marcil
+
+
+D-Link DFE-570TX 4-port NIC is used in terminus firewall.
+
+make:        D-Link
+model:       DFE-570TX REV-A1
+made in:     Taiwan
+s/n (numbers on card):
+  H0T5111001944 (sticker on front)
+  3892B231 (sticker on back)
+  8PCI005TX4A1 (printed on back)
+driver:      Tulip
+pci:         v2.1
+description: 4-port NIC
+chipset:     4x DEC DECchip 21142/43 (rev 41)
+               labeled: Intel 21143TD 1997
+             1x Intel 21152AB L045LW59 1997
+
+NOTE:        Top port of card has GCI recognized 00:80:C8:B9:0A:AD mac address.
+
+
+macs from top to bottom:
+  00:80:c8:b9:0a:ad
+  00:80:c8:b9:0a:ae
+  00:80:c8:b9:0a:af
+  00:80:c8:b9:0a:b0
+
+The DEC Tulip chips include the 21040, 21041, 21140, 21140A, 21142, and 21143. The Lite-On 
+82c168 "PNIC" PCI Network Interface Controller, and the Macronix MX98713, MX98715, and 
+MX98725, are all tulip clones. These tulip driver has been modified to support these. 
+
+from: freelabs.com/
+
+marcilr@boothite:~/svn/cvsexport$ grep -nri "570tx" *
+docs/computing/servers.txt:57:           D-Link DFE-570TX 4-port NIC
+
+marcilr@boothite:~/svn/debian/malachite$ grep -ni dfe-570 pci.ids 
+1673:           1186 1100  DFE-500TX Fast Ethernet
+1674:           1186 1112  DFE-570TX Fast Ethernet
+1715:           1186 1112  DFE-570TX Quad Fast Ethernet
+
+
+Sun Feb 26 10:02:30 AKST 2012
+==============================
+Updated bornite from debian etch 4.0 i386 to squeeze 6.0.4 amd64.  This upgrade allowed bornite to
+see the 2x onboard Marvell 88E1116 10/100/1000Mbps that had previous not worked.
+
+The D-Link DFE-570TX 4-port DEC DECchip 21142/43 (rev 41) PCI card still has the GCI recognized
+00:80:C8:B9:0A:AD mac address on top port of card.
+
+
+
+Links
+=====
+Adaptec Quartet 4 port ethernet cards under Linux and other multiport cards
+DEC Tulip info
+http://www.freelabs.com/~whitis/hardware/quartet.html
+
+D-Link DFE-570TX
+Frequently Asked Questions (FAQs)
+http://www.dlink.co.nz/tech/faq/dfe570tx_faq.htm
